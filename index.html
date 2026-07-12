@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AideyHD — a calm secretary for a busy brain</title>
+<meta name="description" content="Time-blocked days, two-tap logging, gentle check-ins. An ADHD-friendly personal secretary for iPhone. Private by default, free, no subscription.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:title" content="AideyHD — a calm secretary for a busy brain">
+<meta property="og:description" content="Time-blocked days, two-tap logging, gentle check-ins. Private by default, free, no subscription.">
+<meta property="og:url" content="https://aideyhd.com">
+<meta property="og:type" content="website">
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="band hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-mark">
+        <svg viewBox="0 0 80 80" role="img" aria-label="AideyHD icon">
+          <circle cx="40" cy="40" r="25" fill="none" stroke="#615F77" stroke-width="4"/>
+          <path d="M 40 15 A 25 25 0 0 1 54.34 19.52" fill="none" stroke="#3EC1C9" stroke-width="4" stroke-linecap="round"/>
+          <path d="M 58.28 22.95 A 25 25 0 0 1 64.76 36.52" fill="none" stroke="#FF8F6B" stroke-width="4" stroke-linecap="round"/>
+          <path d="M 64.94 41.74 A 25 25 0 0 1 59.43 55.73" fill="none" stroke="#FFB84D" stroke-width="4" stroke-linecap="round"/>
+          <rect x="27" y="30" width="26" height="23" rx="5" fill="#FFFFFF"/>
+          <circle cx="35" cy="39" r="2.4" fill="#2C2A4A"/>
+          <circle cx="45" cy="39" r="2.4" fill="#2C2A4A"/>
+          <path d="M 35 45 Q 40 49.4 45 45" fill="none" stroke="#2C2A4A" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="name">AideyHD</span>
+      </div>
+      <h1>A calm secretary for a busy brain.</h1>
+      <p class="sub">Time-blocked days. Two-tap logging. Gentle check-ins. Private by default.</p>
+      <div class="cta-row">
+        <a class="cta" href="#beta" aria-disabled="true">Beta opening soon</a>
+        <span class="cta-note">Free. No subscription.</span>
+      </div>
+      <p class="platforms">For iPhone. Mac too. Android is planned.</p>
+    </div>
+    <figure class="hero-shot">
+      <img src="assets/screenshot-today.png" width="280" alt="AideyHD's Today screen: summary tiles for schedule, meals, exercise, and check-ins" fetchpriority="high">
+    </figure>
+  </div>
+</header>
+
+<!-- ================= THE PROBLEM ================= -->
+<section id="problem">
+  <div class="wrap">
+    <h2>Where days go sideways</h2>
+    <p class="lede">Not from laziness. From how an ADHD brain meets time.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Time blindness</h3>
+        <p class="muted">3 pm and 8 pm feel the same distance away. A list doesn't fix that. A timeline you can see does.</p>
+      </div>
+      <div class="card">
+        <h3>The impulse-to-log gap</h3>
+        <p class="muted">If logging takes five taps, it doesn't happen. The moment passes.</p>
+      </div>
+      <div class="card">
+        <h3>Out of sight, out of mind</h3>
+        <p class="muted">Tasks, meals, money. People too. It's not that you don't care. The reminder never fires.</p>
+      </div>
+      <div class="card">
+        <h3>The shame spiral</h3>
+        <p class="muted">Most apps punish the gap. Broken streaks, red badges. You stop opening them.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px">AideyHD is built by one person with ADHD, for himself first. Every choice below follows from that.</p>
+  </div>
+</section>
+
+<!-- ================= TWO-TAP DEMO ================= -->
+<section id="demo">
+  <div class="wrap">
+    <h2>Log lunch in two taps</h2>
+    <p class="lede">Try it. This is the real flow, rebuilt for the browser. Tap a chip, then tap Log.</p>
+
+    <div class="demo" id="tapdemo">
+      <div class="demo-head">
+        <h3>Meals</h3>
+        <span class="tap-count" id="tapcount" aria-live="polite"></span>
+      </div>
+      <div class="chips" id="demochips">
+        <button class="qchip" data-title="Breakfast" data-detail="Oatmeal and coffee"><span class="t">Breakfast</span><span class="s">Oatmeal and coffee</span></button>
+        <button class="qchip" data-title="Lunch" data-detail="Leftover pasta"><span class="t">Lunch</span><span class="s">Leftover pasta</span></button>
+        <button class="qchip" data-title="Snack" data-detail="Yogurt"><span class="t">Snack</span><span class="s">Yogurt</span></button>
+      </div>
+      <ul class="demo-log" id="demolog" aria-live="polite"></ul>
+      <p class="demo-empty" id="demoempty">Nothing logged yet. That's fine.</p>
+      <button class="demo-reset" id="demoreset" hidden>Start over</button>
+
+      <div class="sheet" id="demosheet" role="dialog" aria-modal="false" aria-labelledby="sheettitle" hidden>
+        <h4 id="sheettitle">Log meal</h4>
+        <div class="row"><span class="k">Meal</span><span id="sheetmeal">Lunch</span></div>
+        <div class="row"><span class="k">What</span><span id="sheetdetail">Leftover pasta</span></div>
+        <div class="row"><span class="k">Time</span><span id="sheettime">now</span></div>
+        <div class="sheet-actions">
+          <button class="btn-quiet" id="sheetcancel">Cancel</button>
+          <button class="btn-log" id="sheetlog">Log</button>
+        </div>
+      </div>
+
+      <div class="undo-pill" id="undopill" hidden>
+        <span id="undolabel">Logged Lunch</span>
+        <button id="undobtn">Undo</button>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:14px">The chips are yours to curate. Pin what you repeat; one-offs stay out of the way. And every action has an undo, so a stray tap costs nothing.</p>
+  </div>
+</section>
+
+<!-- ================= FEATURE TOUR ================= -->
+<section id="features">
+  <div class="wrap">
+    <h2>What's in it</h2>
+    <p class="lede">Schedule and check-ins are the core. Everything else is optional, off until you want it.</p>
+    <div class="grid grid-3">
+      <div class="card feature">
+        <div class="glyph t-teal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        </div>
+        <h3>Schedule</h3>
+        <p>Your day, drawn to scale. Reminders at start and end. Repeats fill themselves in.</p>
+      </div>
+      <div class="card feature">
+        <div class="glyph t-indigo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="0.6" fill="currentColor"/><circle cx="15" cy="10" r="0.6" fill="currentColor"/><path d="M8.5 14.5q3.5 2.8 7 0"/></svg>
+        </div>
+        <h3>Check-ins</h3>
+        <p>Did it happen? How do you feel? Two taps and done. Moods are faces with names, not numbers.</p>
+      </div>
+      <div class="card feature">
+        <div class="glyph t-amber" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 3v7a2 2 0 0 0 2 2v9M7 3v4M11 3v7M15 3c2 0 3 2 3 5v3h-2v10"/></svg>
+        </div>
+        <h3>Meals</h3>
+        <p>Pin what you eat often. Log it again in a tap.</p>
+      </div>
+      <div class="card feature">
+        <div class="glyph t-coral" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h2M18 12h2M6 8v8M18 8v8M6 12h12"/></svg>
+        </div>
+        <h3>Exercise</h3>
+        <p>A walk counts. Log movement in a tap and watch the week add up.</p>
+      </div>
+      <div class="card feature">
+        <div class="glyph t-green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg>
+        </div>
+        <h3>Budget</h3>
+        <p>Amount and category. A record, not a budgeting system.</p>
+      </div>
+      <div class="card feature">
+        <div class="glyph t-purple" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16 15.2c2.6 0.3 4.5 2 4.5 4.8"/></svg>
+        </div>
+        <h3>People</h3>
+        <p>Birthdays and gentle stay-in-touch nudges. Been a while. Want to say hi?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DESIGN DECISIONS ================= -->
+<section id="why">
+  <div class="wrap">
+    <h2>Why it's like this</h2>
+    <p class="lede">Every ADHD app promises to be different. Here are the actual decisions, with what they replaced.</p>
+    <div class="grid grid-2">
+      <div class="card decision">
+        <h3>No streaks, no pet, no guilt</h3>
+        <p>A broken streak becomes a reason to quit. Coming back should feel like nothing happened.</p>
+        <p class="instead"><strong>Instead of:</strong> points, virtual pets, "don't break the chain."</p>
+      </div>
+      <div class="card decision">
+        <h3>Undo, not "are you sure?"</h3>
+        <p>Confirmation dialogs get dismissed on reflex. Every delete is instant, with five seconds to take it back.</p>
+        <p class="instead"><strong>Instead of:</strong> dialogs nobody reads.</p>
+      </div>
+      <div class="card decision">
+        <h3>Two taps, zero typing</h3>
+        <p>Every extra tap is a drop-off point. Chips are templates you pin, so your one-tap row holds what you actually repeat.</p>
+        <p class="instead"><strong>Instead of:</strong> auto-filled recents. A $340 flight is recent; it isn't re-loggable.</p>
+      </div>
+      <div class="card decision">
+        <h3>A timeline, not a list</h3>
+        <p>Blocks drawn to scale make the shape of the day visible. That's the direct counter to time blindness.</p>
+        <p class="instead"><strong>Instead of:</strong> the checklist.</p>
+      </div>
+      <div class="card decision">
+        <h3>Never lock between impulse and log</h3>
+        <p>Face ID protects your data. But a check-in from a notification opens above the lock, because the moment doesn't wait.</p>
+        <p class="instead"><strong>Instead of:</strong> security that costs the log.</p>
+      </div>
+      <div class="card decision">
+        <h3>Skipped isn't red</h3>
+        <p>A block you didn't do turns gray and stays open to reflect. If you logged a mood, it keeps its full color.</p>
+        <p class="instead"><strong>Instead of:</strong> overdue badges.</p>
+      </div>
+      <div class="card decision">
+        <h3>The widget invites, it doesn't nag</h3>
+        <p>It knows the time of day and which trackers you use. After 9 pm it goes quiet.</p>
+        <p class="instead"><strong>Instead of:</strong> "Drink some water!" and taps that lead nowhere.</p>
+      </div>
+      <div class="card decision">
+        <h3>People are part of focus</h3>
+        <p>Losing touch is an ADHD casualty too. The nudge is warm, and reaching out gets a small celebration.</p>
+        <p class="instead"><strong>Instead of:</strong> "overdue: call Mom (12 days)."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COPY TOGGLE ================= -->
+<section id="tone">
+  <div class="wrap">
+    <h2>The words matter</h2>
+    <p class="lede">Same events, different sentences. Flip it.</p>
+    <div class="toggle" role="group" aria-label="Compare app copy">
+      <button id="tg-most" aria-pressed="true">Most apps</button>
+      <button id="tg-aidey" aria-pressed="false">AideyHD</button>
+    </div>
+    <div class="pairs" id="pairs">
+      <div class="line" data-most="🔥 Streak broken!" data-aidey="Pick back up anytime.">🔥 Streak broken!</div>
+      <div class="line" data-most="You forgot to log lunch." data-aidey="Ready to log lunch?">You forgot to log lunch.</div>
+      <div class="line" data-most="Overdue: call Mom (12 days)" data-aidey="Been a while. Want to say hi?">Overdue: call Mom (12 days)</div>
+      <div class="line" data-most="Complete your profile to continue." data-aidey="There is no profile.">Complete your profile to continue.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WIDGET ================= -->
+<section id="widget">
+  <div class="wrap">
+    <h2>The widget knows what time it is</h2>
+    <p class="lede" id="widgetlede">When a block is coming up, it shows it. When nothing is, a small invitation — matched to the hour on your clock right now.</p>
+    <div class="widgets">
+      <div class="widget">
+        <div class="wash" style="background:linear-gradient(160deg, color-mix(in srgb, var(--teal) 22%, transparent), transparent 70%)"></div>
+        <div class="wl" style="color:var(--teal)">NEXT UP</div>
+        <div class="wt">Deep work</div>
+        <div class="ws">in 25 min</div>
+        <div class="wico" style="color:var(--teal)" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        </div>
+      </div>
+      <div class="widget" id="idlewidget">
+        <div class="wash" id="idlewash"></div>
+        <div class="wl" id="idlelabel"></div>
+        <div class="wt" id="idletitle"></div>
+        <div class="ws" id="idlesub"></div>
+        <div class="wico" id="idleico" aria-hidden="true"></div>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:16px" id="widgetnote">After 9 pm the widget goes quiet. No app should talk to you at midnight.</p>
+  </div>
+</section>
+
+<!-- ================= PRIVACY ================= -->
+<section class="band privacy-band" id="privacy">
+  <div class="wrap">
+    <h2>Your data lives on your phone</h2>
+    <p class="muted">Sync is off until you turn it on. No account, no ads, no analytics on your logs.</p>
+    <p class="muted">And you can leave: export everything as CSV or JSON, any time.</p>
+    <p><a href="privacy/">Privacy policy</a></p>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing">
+  <div class="wrap">
+    <h2>Free. Actually free.</h2>
+    <p class="lede">No subscription, no locked features, no ads. If it helps you, there's a tip jar in Settings.</p>
+    <p class="small muted">Billing confusion is the most common complaint about apps in this space. This is the answer to it.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details>
+      <summary>Is this a medical or therapy app?</summary>
+      <p>No. It's a personal secretary: schedule, logs, reminders. No diagnoses, no advice, no clinical claims.</p>
+    </details>
+    <details>
+      <summary>Do I have to set everything up first?</summary>
+      <p>No. Schedule and check-ins work from the first minute. Turn on meals, exercise, budget, or the brain dump whenever you want them.</p>
+    </details>
+    <details>
+      <summary>Where does my data live?</summary>
+      <p>On your device. iCloud sync is an optional toggle, off by default, and goes through your own iCloud account.</p>
+    </details>
+    <details>
+      <summary>Android? Web?</summary>
+      <p>iPhone first. There's a Mac app too. Android is planned.</p>
+    </details>
+    <details id="beta">
+      <summary>When can I try it?</summary>
+      <p>The beta opens soon on TestFlight. The link will be right here.</p>
+    </details>
+    <details>
+      <summary>Who built this?</summary>
+      <p>One developer with ADHD who wanted an app that didn't shame him. This is it.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="band footer">
+  <div class="wrap">
+    <svg viewBox="0 0 80 80" role="img" aria-label="AideyHD icon">
+      <circle cx="40" cy="40" r="25" fill="none" stroke="#615F77" stroke-width="4"/>
+      <path d="M 40 15 A 25 25 0 0 1 54.34 19.52" fill="none" stroke="#3EC1C9" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 58.28 22.95 A 25 25 0 0 1 64.76 36.52" fill="none" stroke="#FF8F6B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 64.94 41.74 A 25 25 0 0 1 59.43 55.73" fill="none" stroke="#FFB84D" stroke-width="4" stroke-linecap="round"/>
+      <rect x="27" y="30" width="26" height="23" rx="5" fill="#FFFFFF"/>
+      <circle cx="35" cy="39" r="2.4" fill="#2C2A4A"/>
+      <circle cx="45" cy="39" r="2.4" fill="#2C2A4A"/>
+      <path d="M 35 45 Q 40 49.4 45 45" fill="none" stroke="#2C2A4A" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div>Built by one person with ADHD, for himself first.</div>
+      <div class="muted">© 2026 AideyHD</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="privacy/">Privacy</a>
+      <a href="#beta">Beta</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

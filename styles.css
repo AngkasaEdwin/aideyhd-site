@@ -147,6 +147,7 @@ section { padding: 52px 0 12px; }
 .t-indigo { color: var(--indigo); background: color-mix(in srgb, var(--indigo) 10%, transparent); }
 .t-green  { color: var(--green);  background: color-mix(in srgb, var(--green) 10%, transparent); }
 .t-purple { color: var(--purple); background: color-mix(in srgb, var(--purple) 10%, transparent); }
+.t-ink    { color: var(--ink-2);  background: color-mix(in srgb, var(--ink-2) 12%, transparent); }
 
 /* ---------- design decisions ---------- */
 .decision h3 { margin-bottom: 6px; }

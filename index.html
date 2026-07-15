@@ -35,13 +35,13 @@
       <h1>A calm secretary for a busy brain.</h1>
       <p class="sub">Time-blocked days. Two-tap logging. Gentle check-ins. Private by default.</p>
       <div class="cta-row">
-        <a class="cta" href="#beta" aria-disabled="true">Beta opening soon</a>
+        <a class="cta" href="https://testflight.apple.com/join/MDdBMd5a" target="_blank" rel="noopener">Join the beta on TestFlight</a>
         <span class="cta-note">Free. No subscription.</span>
       </div>
       <p class="platforms">For iPhone. Mac too. Android is planned.</p>
     </div>
     <figure class="hero-shot">
-      <img src="assets/screenshot-today.png" width="280" alt="AideyHD's Today screen: summary tiles for schedule, meals, exercise, and check-ins" fetchpriority="high">
+      <img src="assets/screenshot-today.png" width="280" alt="AideyHD's Today screen: a goal to work toward at the top, then summary tiles for schedule, check-ins with mood, meals, exercise, budget, and people" fetchpriority="high">
     </figure>
   </div>
 </header>
@@ -148,6 +148,13 @@
         <p>A walk counts. Log movement in a tap and watch the week add up.</p>
       </div>
       <div class="card feature">
+        <div class="glyph t-indigo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+        </div>
+        <h3>Sleep</h3>
+        <p>Log a night by hand, or read it from Apple Health. It only reads sleep, and only if you connect it.</p>
+      </div>
+      <div class="card feature">
         <div class="glyph t-green" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg>
         </div>
@@ -161,6 +168,13 @@
         <h3>People</h3>
         <p>Birthdays and gentle stay-in-touch nudges. Add a note after you talk, so the next one has context.</p>
       </div>
+      <div class="card feature">
+        <div class="glyph t-pink" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 11h16M4 16h9"/><path d="M14.5 17.5l2.5 2.5 4-5"/></svg>
+        </div>
+        <h3>Brain dump</h3>
+        <p>A blank page for whatever's loud in your head. The one place where typing is the point.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -169,8 +183,8 @@
 <section id="depth">
   <div class="wrap">
     <h2>See the shape of your time</h2>
-    <p class="lede">Two ways of looking back at what the trackers already hold.</p>
-    <div class="grid grid-2">
+    <p class="lede">The trackers do the capturing. Here's where you step back and look at what they hold.</p>
+    <div class="grid grid-3">
       <div class="card feature">
         <div class="glyph t-ink" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
@@ -184,6 +198,13 @@
         </div>
         <h3>History</h3>
         <p>Everything you've logged, grouped by day. Filter down to one tracker, tap an entry to edit it, or reopen a check-in to add to what you wrote.</p>
+      </div>
+      <div class="card feature">
+        <div class="glyph t-ink" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+        </div>
+        <h3>Patterns</h3>
+        <p>After a few weeks of logging, quiet leads surface: steadier moods on days you moved, say. It shows how sure it is, and won't claim which came first unless the timing says so.</p>
       </div>
     </div>
   </div>
@@ -239,6 +260,11 @@
         <h3>Type or talk</h3>
         <p>A mic sits next to the longer fields — a note, the brain dump, a reach-out. Recognition runs on your device wherever the system allows it.</p>
         <p class="instead"><strong>Instead of:</strong> sending your voice off-device to save you some typing.</p>
+      </div>
+      <div class="card decision">
+        <h3>A direction to come back to</h3>
+        <p>Set one thing you're working toward and the next small step. It sits on your Today screen and inside the block you're in, so the goal is there at the moment you'd usually drift from it.</p>
+        <p class="instead"><strong>Instead of:</strong> a goal system that measures you and becomes one more thing to fall behind on.</p>
       </div>
     </div>
   </div>
@@ -318,7 +344,7 @@
     </details>
     <details>
       <summary>Do I have to set everything up first?</summary>
-      <p>No. Schedule and check-ins work from the first minute. Turn on meals, exercise, budget, or the brain dump whenever you want them.</p>
+      <p>No. Schedule and check-ins work from the first minute. Turn on meals, exercise, sleep, budget, or the brain dump whenever you want them.</p>
     </details>
     <details>
       <summary>Where does my data live?</summary>
@@ -329,12 +355,21 @@
       <p>Only when you tap the mic. It's there for fields worth talking instead of typing, and recognition runs on your device wherever the system supports it.</p>
     </details>
     <details>
+      <summary>Does it use Apple Health?</summary>
+      <p>Only if you connect it, and only to read your sleep. Nothing is written back. You can log sleep by hand instead, or leave it off.</p>
+    </details>
+    <details>
+      <summary>Will it tell me what's affecting my mood?</summary>
+      <p>After a few weeks of real data, it surfaces gentle leads — like better moods on days you exercised. It shows a confidence level, and won't claim which came first unless the timing supports it. Leads to notice, not diagnoses.</p>
+    </details>
+    <details>
       <summary>Android? Web?</summary>
       <p>iPhone first. There's a Mac app too. Android is planned.</p>
     </details>
     <details id="beta">
       <summary>When can I try it?</summary>
-      <p>The beta opens soon on TestFlight. The link will be right here.</p>
+      <p>It's open. <a href="https://testflight.apple.com/join/MDdBMd5a" target="_blank" rel="noopener">Join the beta on TestFlight</a>. Free, private, no account needed.</p>
+      <p>Once you're in, there's a <strong>Send feedback</strong> button in Settings that comes straight to me — tell me what's working and what isn't. TestFlight has its own way too: screenshot the app, then tap Share Beta Feedback.</p>
     </details>
     <details>
       <summary>Who built this?</summary>

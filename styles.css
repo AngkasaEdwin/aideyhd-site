@@ -253,7 +253,28 @@ section { padding: 52px 0 12px; }
   .frow-shot { flex: 0 0 auto; }
 }
 
-/* ---------- design decisions ---------- */
+/* ---------- design decisions ----------
+   Ten cards was a wall. The five with the most charge stay visible; the rest
+   sit behind an expander — still in the DOM, so nothing is lost to search. */
+.more-decisions {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 16px;
+}
+.more-decisions > summary {
+  display: inline-flex;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 12px 0;
+  color: var(--teal);
+  font-weight: 650;
+  font-size: 15.5px;
+}
+.more-decisions > summary::after { content: "→"; font-size: 16px; color: var(--teal); }
+.more-decisions[open] > summary::after { content: "↑"; }
+.more-decisions[open] > summary { margin-bottom: 8px; }
+
 .decision h3 { margin-bottom: 6px; }
 .decision p { font-size: 15px; color: var(--ink-2); }
 .decision .instead {

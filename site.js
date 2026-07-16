@@ -132,26 +132,6 @@
   });
 })();
 
-// ---------- copy toggle ----------
-(function () {
-  const most = document.getElementById("tg-most");
-  const aidey = document.getElementById("tg-aidey");
-  const pairs = document.getElementById("pairs");
-  if (!most) return;
-
-  function set(mode) {
-    const isAidey = mode === "aidey";
-    pairs.classList.toggle("aidey", isAidey);
-    most.setAttribute("aria-pressed", String(!isAidey));
-    aidey.setAttribute("aria-pressed", String(isAidey));
-    pairs.querySelectorAll(".line").forEach((el) => {
-      el.textContent = isAidey ? el.dataset.aidey : el.dataset.most;
-    });
-  }
-  most.addEventListener("click", () => set("most"));
-  aidey.addEventListener("click", () => set("aidey"));
-})();
-
 // ---------- widget idle state, from the visitor's clock ----------
 // Mirrors the app's WidgetIdleInvitation buckets: morning 5–11, midday 11–14,
 // afternoon 14–17, evening 17–21, quiet 21–5.

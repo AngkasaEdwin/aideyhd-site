@@ -358,35 +358,29 @@ section { padding: 52px 0 12px; }
 .founder-links { margin-bottom: 4px; }
 .founder-links a { font-weight: 600; }
 
-/* ---------- copy toggle ---------- */
-.toggle {
-  display: inline-flex;
-  background: color-mix(in srgb, var(--ink-2) 12%, transparent);
-  border-radius: 999px;
-  padding: 3px;
-  gap: 2px;
-  margin-bottom: 18px;
-}
-.toggle button {
-  border: none; background: none;
-  padding: 8px 20px; border-radius: 999px;
-  font-size: 14.5px; font-weight: 600;
-  color: var(--ink-2);
-}
-.toggle button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
-.pairs { display: grid; gap: 10px; max-width: 560px; }
-.pairs .line {
+/* ---------- the words matter ----------
+   Was a segmented toggle defaulting to the "Most apps" side, so a visitor who
+   didn't click read four shame messages and none of the answers. Both sides
+   now show at once, ours first — the same shape as the "Instead of:" pattern
+   the decision cards already use. */
+.pairs { display: grid; gap: 10px; max-width: 560px; list-style: none; padding: 0; margin: 0; }
+.pairs li {
   border-radius: 14px;
-  padding: 12px 18px;
+  padding: 14px 18px;
+  background: color-mix(in srgb, var(--teal) 9%, transparent);
+}
+.says-aidey {
+  margin: 0;
   font-size: 15.5px;
-  background: color-mix(in srgb, var(--coral) 9%, transparent);
+  font-weight: 600;
+  color: var(--ink);
+}
+.says-most {
+  margin: 6px 0 0;
+  font-size: 13.5px;
   color: var(--ink-2);
 }
-.pairs.aidey .line {
-  background: color-mix(in srgb, var(--teal) 9%, transparent);
-  color: var(--ink);
-  font-weight: 600;
-}
+.says-most span { color: var(--coral); font-weight: 650; }
 
 /* ---------- widget mock ---------- */
 .widgets { display: flex; gap: 18px; flex-wrap: wrap; }

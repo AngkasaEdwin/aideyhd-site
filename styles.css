@@ -343,6 +343,21 @@ section { padding: 52px 0 12px; }
 }
 .demo-reset { margin-top: 14px; background: none; border: none; color: var(--ink-2); font-size: 13px; padding: 4px; }
 
+/* ---------- founder ----------
+   "Built by one developer with ADHD" was the site's central trust claim and
+   had nobody attached to it. */
+.founder-card { display: flex; gap: 22px; align-items: flex-start; }
+.founder-face { border-radius: 999px; flex: none; display: block; }
+.founder-body { flex: 1 1 auto; }
+.founder-body p { font-size: 15.5px; color: var(--ink-2); }
+.founder-hi {
+  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px; font-weight: 700; color: var(--ink);
+  margin-bottom: 8px;
+}
+.founder-links { margin-bottom: 4px; }
+.founder-links a { font-weight: 600; }
+
 /* ---------- copy toggle ---------- */
 .toggle {
   display: inline-flex;

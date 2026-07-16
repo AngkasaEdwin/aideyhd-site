@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AideyHD — a calm secretary for a busy brain</title>
-<meta name="description" content="Time-blocked days, two-tap logging, gentle check-ins. An ADHD-friendly personal secretary for iPhone. Private by default, free, no subscription.">
+<meta name="description" content="A free iPhone app for ADHD. Your day drawn to scale instead of listed, meals and mood and money logged in two taps, and nothing that turns red when you miss one. Private by default, no account, no subscription.">
+<link rel="canonical" href="https://aideyhd.com/">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -20,6 +21,30 @@
 <meta name="twitter:title" content="AideyHD — a calm secretary for a busy brain">
 <meta name="twitter:description" content="Time-blocked days, two-tap logging, gentle check-ins. Private by default, free, no subscription.">
 <meta name="twitter:image" content="https://aideyhd.com/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AideyHD",
+  "description": "A calm, ADHD-friendly personal secretary for iPhone: a to-scale day timeline, two-tap logging for meals, mood, exercise, sleep and spending, gentle check-ins, and a stay-in-touch layer for the people who matter. Private by default — data stays on your device.",
+  "url": "https://aideyhd.com/",
+  "applicationCategory": "HealthApplication",
+  "applicationSubCategory": "Productivity",
+  "operatingSystem": "iOS 17+",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Edwin",
+    "url": "https://github.com/AngkasaEdwin"
+  },
+  "privacyPolicy": "https://aideyhd.com/privacy/"
+}
+</script>
 </head>
 <body>
 
@@ -53,7 +78,7 @@
       <p class="platforms">For iPhone. Android is on the way.</p>
     </div>
     <figure class="hero-shot">
-      <img src="assets/screenshot-today.png" width="280" alt="AideyHD's Today screen: a goal to work toward at the top, then summary tiles for schedule, check-ins with mood, meals, exercise, budget, and people" fetchpriority="high">
+      <picture><source srcset="assets/screenshot-today.webp" type="image/webp"><img src="assets/screenshot-today.png" width="280" alt="AideyHD's Today screen: a goal to work toward at the top, then summary tiles for schedule, check-ins with mood, meals, exercise, budget, and people" fetchpriority="high"></picture>
     </figure>
   </div>
 </header>
@@ -143,7 +168,7 @@
 
       <div class="frow">
         <div class="frow-shot">
-          <img src="assets/feature-schedule.png" width="280" alt="AideyHD's Schedule: a to-scale timeline of the day, each block drawn at its true length, with a red line marking now.">
+          <picture><source srcset="assets/feature-schedule.webp" type="image/webp"><img src="assets/feature-schedule.png" width="280" alt="AideyHD's Schedule: a to-scale timeline of the day, each block drawn at its true length, with a red line marking now." loading="lazy" decoding="async"></picture>
         </div>
         <div class="frow-copy">
           <div class="eyebrow" style="color:var(--teal)">Schedule</div>
@@ -154,7 +179,7 @@
 
       <div class="frow reverse">
         <div class="frow-shot">
-          <img src="assets/feature-checkin.png" width="280" alt="AideyHD's Check-in: a row of five colored mood faces with 'Great' selected, and a note field below.">
+          <picture><source srcset="assets/feature-checkin.webp" type="image/webp"><img src="assets/feature-checkin.png" width="280" alt="AideyHD's Check-in: a row of five colored mood faces with 'Great' selected, and a note field below." loading="lazy" decoding="async"></picture>
         </div>
         <div class="frow-copy">
           <div class="eyebrow" style="color:var(--indigo)">Check-in</div>
@@ -166,8 +191,8 @@
       <div class="frow">
         <div class="frow-shot pair">
           <div class="shot-pair">
-            <img src="assets/feature-dashboard-light.png" width="132" alt="AideyHD's dashboard in light mode: a goal to work toward, then color-coded tiles for schedule, check-in, meals, exercise, budget, and people.">
-            <img src="assets/feature-dashboard-dark.png" width="132" alt="The same AideyHD dashboard in dark mode.">
+            <picture><source srcset="assets/feature-dashboard-light.webp" type="image/webp"><img src="assets/feature-dashboard-light.png" width="132" alt="AideyHD's dashboard in light mode: a goal to work toward, then color-coded tiles for schedule, check-in, meals, exercise, budget, and people." loading="lazy" decoding="async"></picture>
+            <picture><source srcset="assets/feature-dashboard-dark.webp" type="image/webp"><img src="assets/feature-dashboard-dark.png" width="132" alt="The same AideyHD dashboard in dark mode." loading="lazy" decoding="async"></picture>
           </div>
         </div>
         <div class="frow-copy">
@@ -180,7 +205,7 @@
 
       <div class="frow reverse">
         <div class="frow-shot">
-          <img src="assets/feature-people.png" width="280" alt="AideyHD's People screen: the people you keep track of, each with a relationship icon, a birthday and last-reached-out line, and a Reach out button.">
+          <picture><source srcset="assets/feature-people.webp" type="image/webp"><img src="assets/feature-people.png" width="280" alt="AideyHD's People screen: the people you keep track of, each with a relationship icon, a birthday and last-reached-out line, and a Reach out button." loading="lazy" decoding="async"></picture>
         </div>
         <div class="frow-copy">
           <div class="eyebrow" style="color:var(--purple)">People</div>

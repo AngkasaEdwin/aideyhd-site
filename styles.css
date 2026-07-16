@@ -162,6 +162,35 @@ section { padding: 52px 0 12px; }
 }
 .cta-fine { margin: 0; font-size: 13.5px; color: var(--ink-2); text-wrap: balance; }
 
+/* ---------- sticky mobile CTA ----------
+   The page is long; on a phone the hero button is gone within one flick and
+   there's no way back to it. Quiet, dismissible, and never on desktop (where
+   the QR needs to stay reachable and the viewport is tall enough anyway). */
+.sticky-cta {
+  position: fixed;
+  left: 12px; right: 12px; bottom: 12px;
+  z-index: 20;
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--navy) 94%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--pill-shadow);
+}
+.sticky-cta[hidden] { display: none; }
+.sticky-cta .cta { flex: 1; text-align: center; padding: 11px 18px; }
+.sticky-x {
+  flex: none;
+  width: 44px; height: 44px;
+  border: none; border-radius: 999px;
+  background: none;
+  color: rgba(236, 235, 244, 0.75);
+  font-size: 22px; line-height: 1;
+}
+@media (min-width: 900px) { .sticky-cta { display: none !important; } }
+/* Keep the fixed bar from sitting on top of the footer links. */
+@media (max-width: 899px) { body { padding-bottom: 76px; } }
+
 /* ---------- cards ---------- */
 .card {
   background: var(--card);

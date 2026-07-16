@@ -103,6 +103,35 @@
   });
 })();
 
+// ---------- sticky mobile CTA ----------
+// Shows once the hero's own button has scrolled away, so it never double-asks.
+// Dismissible, and the dismissal sticks for the visit.
+(function () {
+  const bar = document.getElementById("stickycta");
+  const heroCta = document.querySelector(".hero .cta");
+  if (!bar || !heroCta) return;
+
+  let dismissed = false;
+  try { dismissed = !!sessionStorage.getItem("ctaDismissed"); } catch (_) {}
+  if (dismissed) return;
+
+  function update() {
+    // Past the hero button's bottom edge? Then there's no CTA on screen.
+    const gone = heroCta.getBoundingClientRect().bottom < 0;
+    bar.hidden = !gone;
+  }
+  addEventListener("scroll", update, { passive: true });
+  addEventListener("resize", update, { passive: true });
+  update();
+
+  document.getElementById("stickyx").addEventListener("click", () => {
+    bar.hidden = true;
+    removeEventListener("scroll", update);
+    removeEventListener("resize", update);
+    try { sessionStorage.setItem("ctaDismissed", "1"); } catch (_) {}
+  });
+})();
+
 // ---------- copy toggle ----------
 (function () {
   const most = document.getElementById("tg-most");

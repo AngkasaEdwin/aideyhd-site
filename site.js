@@ -1,4 +1,22 @@
-// AideyHD site — the three small interactive pieces. No dependencies.
+// AideyHD site — the small interactive pieces. No dependencies.
+
+// ---------- a #-linked <details> should open, not land on a closed row ----------
+// The footer's "Beta" link points at an FAQ item. Without this, following it
+// scrolls you to a shut accordion and asks you to figure out the second click.
+(function () {
+  function openTarget() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const d = el.closest("details");
+    if (!d || d.open) return;
+    d.open = true;
+    d.scrollIntoView({ block: "center" }); // opening moves it; land on it anyway
+  }
+  openTarget();
+  window.addEventListener("hashchange", openTarget);
+})();
 
 // ---------- two-tap demo ----------
 (function () {

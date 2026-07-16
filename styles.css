@@ -117,8 +117,10 @@ section { padding: 52px 0 12px; }
   border: none;
 }
 .cta[aria-disabled="true"] { opacity: 0.92; cursor: default; }
-.cta-note { color: rgba(236, 235, 244, 0.7); font-size: 15px; }
-.platforms { margin-top: 18px; color: rgba(236, 235, 244, 0.6); font-size: 14.5px; }
+/* These two carry conversion copy ("free", "for iPhone"), so they get full
+   strength rather than the 60–70% wash used for genuinely secondary text. */
+.cta-note { color: rgba(236, 235, 244, 0.82); font-size: 15px; }
+.platforms { margin-top: 18px; color: rgba(236, 235, 244, 0.82); font-size: 14.5px; }
 
 /* ---------- cards ---------- */
 .card {
@@ -351,6 +353,8 @@ details p { color: var(--ink-2); font-size: 15.5px; padding-bottom: 16px; }
 .footer svg { width: 44px; height: 44px; flex: none; }
 .footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
 .footer a { color: rgba(236, 235, 244, 0.85); }
+/* 44px minimum tap target — these were 23px. */
+.footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* privacy page */
 .doc { max-width: 680px; margin: 0 auto; padding: 48px 24px 80px; }

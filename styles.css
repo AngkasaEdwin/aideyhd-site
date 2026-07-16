@@ -160,7 +160,15 @@ section { padding: 52px 0 12px; }
   font-weight: 700;
   text-wrap: balance;
 }
-.cta-fine { margin: 0; font-size: 13.5px; color: var(--ink-2); text-wrap: balance; }
+/* Not decoration — it pre-answers cost/effort/commitment at the decision point,
+   so it clears AA rather than sitting at the muted 4.1:1 --ink-2 lands on the
+   tinted block. */
+.cta-fine {
+  margin: 0;
+  font-size: 13.5px;
+  color: color-mix(in srgb, var(--ink-2) 55%, var(--ink));
+  text-wrap: balance;
+}
 
 /* ---------- sticky mobile CTA ----------
    The page is long; on a phone the hero button is gone within one flick and
@@ -267,11 +275,14 @@ section { padding: 52px 0 12px; }
   justify-content: flex-start;
   gap: 8px;
   padding: 12px 0;
-  color: var(--teal);
+  /* Plain --teal is only ~4.1:1 on the grey ground (it's tuned to clear AA on
+     white, which is where the app's cards put it). Deepened for this one spot
+     rather than weakening the token everywhere. */
+  color: color-mix(in srgb, var(--teal) 75%, var(--ink));
   font-weight: 650;
   font-size: 15.5px;
 }
-.more-decisions > summary::after { content: "→"; font-size: 16px; color: var(--teal); }
+.more-decisions > summary::after { content: "→"; font-size: 16px; }
 .more-decisions[open] > summary::after { content: "↑"; }
 .more-decisions[open] > summary { margin-bottom: 8px; }
 
@@ -399,7 +410,9 @@ section { padding: 52px 0 12px; }
 .says-most {
   margin: 6px 0 0;
   font-size: 13.5px;
-  color: var(--ink-2);
+  /* --ink-2 lands at 4.06:1 on the tinted row — under AA. Nudged toward --ink
+     just far enough to clear it while staying visibly secondary. */
+  color: color-mix(in srgb, var(--ink-2) 60%, var(--ink));
 }
 .says-most span { color: var(--coral); font-weight: 650; }
 

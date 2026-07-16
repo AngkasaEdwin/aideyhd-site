@@ -122,6 +122,46 @@ section { padding: 52px 0 12px; }
 .cta-note { margin: 14px 0 0; color: rgba(236, 235, 244, 0.82); font-size: 15px; }
 .platforms { margin-top: 6px; color: rgba(236, 235, 244, 0.82); font-size: 14.5px; }
 
+/* ---------- QR: the desktop escape hatch ----------
+   A desktop visitor who taps the CTA lands on Apple's "open this on your
+   iPhone" page — a dead end. The QR hands them their phone instead. Hidden
+   below 900px, where the visitor is already holding the thing it points to. */
+.qr { display: none; margin: 0; }
+.qr img, .qr-mini { border-radius: 8px; display: block; background: #fff; }
+.qr figcaption {
+  margin-top: 8px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: rgba(236, 235, 244, 0.7);
+}
+.qr-mini { display: none; }
+@media (min-width: 900px) {
+  .qr { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .qr-mini { display: block; }
+}
+
+/* ---------- repeated CTA blocks ---------- */
+.cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  margin: 40px 0 8px;
+  padding: 32px 24px;
+  background: color-mix(in srgb, var(--teal) 7%, transparent);
+  border-radius: 20px;
+}
+.cta-block .cta { color: #12303A; }
+.cta-pitch {
+  margin: 0;
+  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  text-wrap: balance;
+}
+.cta-fine { margin: 0; font-size: 13.5px; color: var(--ink-2); text-wrap: balance; }
+
 /* ---------- cards ---------- */
 .card {
   background: var(--card);

@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "AideyHD",
-  "description": "A calm, ADHD-friendly personal secretary for iPhone: a to-scale day timeline, two-tap logging for meals, mood, exercise, sleep and spending, gentle check-ins, and a stay-in-touch layer for the people who matter. Private by default — data stays on your device.",
+  "description": "A calm, ADHD-friendly personal secretary for iPhone: a to-scale day timeline you can fill by hand or import from your Google or Apple calendar, two-tap logging for meals, mood, exercise, sleep and spending, a spoken journal that turns talk into loggable suggestions, gentle check-ins, and a stay-in-touch layer for the people who matter. Private by default — data stays on your device.",
   "url": "https://aideyhd.com/",
   "applicationCategory": "HealthApplication",
   "applicationSubCategory": "Productivity",
@@ -168,12 +168,13 @@
 
       <div class="frow">
         <div class="frow-shot">
-          <picture><source srcset="assets/feature-schedule.webp" type="image/webp"><img src="assets/feature-schedule.png" width="280" alt="AideyHD's Schedule: a to-scale timeline of the day, each block drawn at its true length, with a red line marking now." loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/feature-schedule.webp" type="image/webp"><img src="assets/feature-schedule.png" width="280" alt="AideyHD's Schedule: a to-scale calendar of the day, each block drawn at its true length and colored by type, a small face on the ones already done, and a red line marking now." loading="lazy" decoding="async"></picture>
         </div>
         <div class="frow-copy">
           <div class="eyebrow" style="color:var(--teal)">Schedule</div>
           <h3>3 pm and 8 pm stop feeling the same</h3>
-          <p>Your day is drawn to scale, so you can feel how much time really sits between now and the next thing. You also get a reminder at the start and end of every block, so nothing sneaks up on you.</p>
+          <p>Your day is a real calendar now, drawn to scale, so you can feel how much time actually sits between now and the next thing. Drag a block to move it, pull an edge to stretch it, or tap an empty gap to add one. Pinch to fit the whole day on screen, swipe to see tomorrow.</p>
+          <p>Already in Google or Apple Calendar? Bring it in, and your events keep the colors of the calendars they came from. Reminders land at the start and end of each block, and they can break through Focus when you want them to.</p>
         </div>
       </div>
 
@@ -258,7 +259,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 11h16M4 16h9"/><path d="M14.5 17.5l2.5 2.5 4-5"/></svg>
         </div>
         <h3>Brain dump</h3>
-        <p>A blank page for whatever's loud in your head. The one place where typing is the point.</p>
+        <p>A blank page for whatever's loud in your head. Or say your day out loud, and it offers to log the bits it heard, like the lunch and the walk, for you to keep or skip.</p>
       </div>
       <div class="card feature">
         <div class="glyph t-ink" aria-hidden="true">
@@ -272,7 +273,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 5-7"/></svg>
         </div>
         <h3>Patterns</h3>
-        <p>After a few weeks of logging, gentle patterns start to surface, like steadier moods on the days you moved. It tells you how sure it is, and it won't claim what caused what unless the timing really backs it up.</p>
+        <p>After a few weeks of logging, gentle patterns start to surface, like steadier moods on the days you moved, or after a longer night. It tells you how sure it is, and it won't claim what caused what unless the timing really backs it up.</p>
       </div>
     </div>
   </div>
@@ -290,16 +291,6 @@
         <p class="instead"><strong>Instead of:</strong> points, virtual pets, "don't break the chain."</p>
       </div>
       <div class="card decision">
-        <h3>Undo, not "are you sure?"</h3>
-        <p>Confirmation dialogs get dismissed on reflex. Every delete is instant, with five seconds to take it back.</p>
-        <p class="instead"><strong>Instead of:</strong> dialogs nobody reads.</p>
-      </div>
-      <div class="card decision">
-        <h3>Never lock between impulse and log</h3>
-        <p>Face ID protects your data. But a check-in from a notification opens above the lock, because the moment doesn't wait.</p>
-        <p class="instead"><strong>Instead of:</strong> security that costs the log.</p>
-      </div>
-      <div class="card decision">
         <h3>Skipped isn't red</h3>
         <p>A block you didn't get to turns gray, not red. You can still tap it any time to reflect, and the mood you log there keeps its full color even though the block doesn't.</p>
         <p class="instead"><strong>Instead of:</strong> overdue badges.</p>
@@ -309,11 +300,31 @@
         <p>Losing touch is an ADHD casualty too. Reaching out gets a small celebration, and you can jot what you talked about so the next one has somewhere to start.</p>
         <p class="instead"><strong>Instead of:</strong> "overdue: call Mom (12 days)."</p>
       </div>
+      <div class="card decision">
+        <h3>Never sync. The word is Import.</h3>
+        <p>Bring your calendar in and it becomes your blocks to keep. Nothing is written back, no account is linked, and it only runs the moment you ask it to.</p>
+        <p class="instead"><strong>Instead of:</strong> a background sync with account access that writes into your real calendar.</p>
+      </div>
+      <div class="card decision">
+        <h3>Nothing's written until you tap it</h3>
+        <p>Say your day out loud and it reads it back as guesses, right on your phone. The suggestions wait. A wrong one costs a glance, and the ones you tap are the only ones that get logged.</p>
+        <p class="instead"><strong>Instead of:</strong> parsing your words on a server and logging them for you.</p>
+      </div>
     </div>
 
     <details class="more-decisions">
-      <summary>Five more decisions</summary>
+      <summary>Eight more decisions</summary>
       <div class="grid grid-2">
+        <div class="card decision">
+          <h3>Undo, not "are you sure?"</h3>
+          <p>Confirmation dialogs get dismissed on reflex. Every delete is instant, with five seconds to take it back.</p>
+          <p class="instead"><strong>Instead of:</strong> dialogs nobody reads.</p>
+        </div>
+        <div class="card decision">
+          <h3>Never lock between impulse and log</h3>
+          <p>Face ID protects your data. But a check-in from a notification opens above the lock, because the moment doesn't wait.</p>
+          <p class="instead"><strong>Instead of:</strong> security that costs the log.</p>
+        </div>
         <div class="card decision">
           <h3>Two taps, zero typing</h3>
           <p>Every extra tap is a drop-off point. Chips are templates you pin, so your one-tap row holds what you actually repeat.</p>
@@ -338,6 +349,11 @@
           <h3>A direction to come back to</h3>
           <p>Set one thing you're working toward and the next small step. It sits on your Today screen and inside the block you're in, so the goal is there at the moment you'd usually drift from it.</p>
           <p class="instead"><strong>Instead of:</strong> a goal system that measures you and becomes one more thing to fall behind on.</p>
+        </div>
+        <div class="card decision">
+          <h3>A due date is a fact. Urgency isn't.</h3>
+          <p>Things you're waiting on sit in a short list, three at a time. A due date brings one into view when it's close. It never grades what matters most, because that's a judgment, and it's yours.</p>
+          <p class="instead"><strong>Instead of:</strong> priority flags, red overdue labels, an algorithm ranking your life.</p>
         </div>
       </div>
     </details>
@@ -381,7 +397,7 @@
 <section id="widget">
   <div class="wrap">
     <h2>The widget knows what time it is</h2>
-    <p class="lede" id="widgetlede">When a block's coming up, the widget puts it in front of you before you'd think to check. When your schedule's clear, it offers a small nudge that suits the time of day, and otherwise stays out of your way.</p>
+    <p class="lede" id="widgetlede">When a block's coming up, the widget shows it before you'd think to check. When you're free, it offers a small nudge that fits the time of day, then stays out of the way.</p>
     <div class="widgets">
       <div class="widget">
         <div class="wash" style="background:linear-gradient(160deg, color-mix(in srgb, var(--teal) 22%, transparent), transparent 70%)"></div>
@@ -479,8 +495,12 @@
       <p>Only if you connect it, and only to read your sleep. Nothing is written back. You can log sleep by hand instead, or leave it off.</p>
     </details>
     <details>
+      <summary>Can I bring in my existing calendar?</summary>
+      <p>Yes. Import a .ics file, or pick calendars already on your phone, and the events become normal blocks you can edit and check in on. It only ever reads your calendar, nothing is written back, and it only runs when you tap Import.</p>
+    </details>
+    <details>
       <summary>Will it tell me what's affecting my mood?</summary>
-      <p>After a few weeks of real data, it surfaces gentle leads, like better moods on the days you exercised. It shows how confident it is, and it won't claim what caused what unless the timing supports it. These are things to notice, not diagnoses.</p>
+      <p>After a few weeks of real data, it surfaces gentle leads, like better moods on the days you exercised, or after a longer night's sleep. It shows how confident it is, and it won't claim what caused what unless the timing supports it. These are things to notice, not diagnoses.</p>
     </details>
     <details>
       <summary>Android? Web?</summary>

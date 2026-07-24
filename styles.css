@@ -77,7 +77,7 @@ button { font: inherit; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 
 .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
-section { padding: 52px 0 12px; }
+section { padding: 44px 0 10px; }
 .lede { color: var(--ink-2); max-width: 62ch; margin-bottom: 24px; }
 .muted { color: var(--ink-2); }
 .small { font-size: 14.5px; }
@@ -91,7 +91,7 @@ section { padding: 52px 0 12px; }
 .band .muted { color: rgba(236, 235, 244, 0.7); }
 
 /* ---------- hero ---------- */
-.hero { padding: 64px 0 60px; }
+.hero { padding: 56px 0 52px; }
 .hero .wrap { display: flex; gap: 44px; align-items: center; flex-wrap: wrap; }
 .hero-copy { flex: 1 1 380px; }
 .hero-shot { flex: 0 1 280px; margin: 0; }
@@ -147,7 +147,7 @@ section { padding: 52px 0 12px; }
   align-items: center;
   gap: 14px;
   text-align: center;
-  margin: 40px 0 8px;
+  margin: 32px 0 8px;
   padding: 32px 24px;
   background: color-mix(in srgb, var(--teal) 7%, transparent);
   border-radius: 20px;
@@ -232,7 +232,7 @@ section { padding: 52px 0 12px; }
 .t-ink    { color: var(--ink-2);  background: color-mix(in srgb, var(--ink-2) 12%, transparent); }
 
 /* ---------- feature rows (screenshot walkthrough) ---------- */
-.frows { display: flex; flex-direction: column; gap: 60px; margin-top: 8px; }
+.frows { display: flex; flex-direction: column; gap: 46px; margin-top: 8px; }
 .frow { display: flex; align-items: center; gap: 52px; }
 .frow.reverse { flex-direction: row-reverse; }
 .frow-shot { flex: 0 0 280px; display: flex; justify-content: center; }
@@ -456,11 +456,11 @@ details[open] summary::after { content: "–"; }
 details p { color: var(--ink-2); font-size: 15.5px; padding-bottom: 16px; }
 
 /* ---------- privacy band / pricing / footer ---------- */
-.privacy-band { padding: 56px 0; margin-top: 44px; }
+.privacy-band { padding: 48px 0; margin-top: 32px; }
 .privacy-band h2 { color: #fff; }
 .privacy-band p { max-width: 56ch; }
 
-.footer { padding: 44px 0 52px; margin-top: 56px; font-size: 14.5px; }
+.footer { padding: 44px 0 52px; margin-top: 44px; font-size: 14.5px; }
 .footer .wrap { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
 .footer svg { width: 44px; height: 44px; flex: none; }
 .footer nav { display: flex; gap: 18px; flex-wrap: wrap; }

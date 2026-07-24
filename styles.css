@@ -475,3 +475,37 @@ details p { color: var(--ink-2); font-size: 15.5px; padding-bottom: 16px; }
 .doc .updated { color: var(--ink-2); font-size: 14.5px; margin-bottom: 28px; }
 .doc-top { padding: 20px 24px 0; }
 .doc-top a { text-decoration: none; font-weight: 600; }
+
+/* ---------- notes / essays ----------
+   Long-form pieces reuse .doc. Essays are the deep version of a "Why it's
+   like this" card, kept off the landing page under /notes/. */
+.note-meta { color: var(--ink-2); font-size: 14px; margin: 2px 0 26px; }
+.note-meta .dot { opacity: 0.5; margin: 0 8px; }
+.tldr {
+  background: color-mix(in srgb, var(--teal) 8%, transparent);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 0 0 30px;
+  font-size: 16px;
+}
+.tldr strong { color: var(--teal); }
+/* Authoring scaffold only — every .prompt gets deleted before the essay is
+   published. The amber wash makes an unfinished block impossible to miss. */
+.prompt {
+  border-left: 3px solid var(--amber);
+  background: color-mix(in srgb, var(--amber) 9%, transparent);
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  margin: 12px 0 26px;
+  font-size: 15px;
+  color: color-mix(in srgb, var(--ink-2) 55%, var(--ink));
+}
+.prompt b { color: var(--amber); font-weight: 700; }
+.prompt p { margin: 0; }
+.prompt ul { margin: 8px 0 0; padding-left: 20px; }
+.prompt li { margin: 4px 0; }
+.note-list { list-style: none; padding: 0; margin: 28px 0 0; }
+.note-list li { padding: 18px 0; border-top: 1px solid var(--hairline); }
+.note-list a { font-weight: 700; font-size: 18px; text-decoration: none; }
+.note-list .note-hook { color: var(--ink-2); font-size: 15px; margin: 4px 0 0; }
+.note-list .note-time { color: var(--ink-2); font-size: 13px; margin: 6px 0 0; }

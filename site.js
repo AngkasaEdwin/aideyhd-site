@@ -132,6 +132,67 @@
   });
 })();
 
+// ---------- variance demo: the app's own check-in notification pools ----------
+// Mirrors VariedCopy.swift's shuffle-bag draw (no repeat until the pool's
+// exhausted), in memory only — a visitor sees a handful of draws, not the
+// weeks of use the app's persisted cycle exists for.
+(function () {
+  const titleEl = document.getElementById("notiftitle");
+  const bodyEl = document.getElementById("notifbody");
+  const again = document.getElementById("notifagain");
+  if (!titleEl || !again) return;
+
+  const BLOCK = "Deep work";
+
+  // Verbatim from VariedCopy.swift's checkInTitles / checkInBodies.
+  const titles = [
+    "How did {title} go?", "{title} — how'd it go?", "Checking in on {title}",
+    "How was {title}?", "{title} just wrapped", "That was {title}",
+    "Did you get to {title}?", "{title}: how'd it go?", "A moment on {title}?",
+    "Looking back at {title}", "That's time on {title}", "Quick check-in: {title}"
+  ];
+  const bodies = [
+    "Tap to check in. Did you get to it, and how are you feeling?",
+    "A quick check-in: did it happen, and how's your mood?",
+    "Did you get to it? Either answer helps.",
+    "Two quick questions: did it happen, and how are you?",
+    "However it went, it's worth noting.",
+    "Thirty seconds to close the loop.",
+    "Did it happen? No wrong answer.",
+    "Tap to log how it went.",
+    "How'd it go? A tap is enough.",
+    "Take a beat and check in.",
+    "Log it while it's fresh.",
+    "One tap to look back at it."
+  ];
+
+  // Mirrors ShuffleBag.draw()'s exact rule, including the one that matters for
+  // a demo someone clicks rapidly: the just-drawn line carries into the next
+  // cycle as already-used, so the pool boundary can never repeat a line twice
+  // in a row.
+  function shuffleBag(pool) {
+    let used = new Set();
+    return function draw() {
+      const available = pool.filter((p) => !used.has(p));
+      const candidates = available.length ? available : pool;
+      const choice = candidates[Math.floor(Math.random() * candidates.length)];
+      const nextUsed = new Set([...used].filter((p) => pool.includes(p)));
+      nextUsed.add(choice);
+      used = nextUsed.size >= pool.length ? new Set([choice]) : nextUsed;
+      return choice;
+    };
+  }
+  const drawTitle = shuffleBag(titles);
+  const drawBody = shuffleBag(bodies);
+
+  function next() {
+    titleEl.textContent = drawTitle().replace("{title}", BLOCK);
+    bodyEl.textContent = drawBody();
+  }
+  again.addEventListener("click", next);
+  next();
+})();
+
 // ---------- widget idle state, from the visitor's clock ----------
 // Mirrors the app's WidgetIdleInvitation buckets: morning 5–11, midday 11–14,
 // afternoon 14–17, evening 17–21, quiet 21–5.

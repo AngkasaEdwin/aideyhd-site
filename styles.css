@@ -25,6 +25,8 @@
 
   --shadow: 0 1px 2px rgba(44, 42, 74, 0.06), 0 6px 24px rgba(44, 42, 74, 0.08);
   --pill-shadow: 0 2px 8px rgba(44, 42, 74, 0.14), 0 8px 28px rgba(44, 42, 74, 0.14);
+  --shot-ring: rgba(44, 42, 74, 0.14);
+  --shot-shadow: 0 20px 40px rgba(44, 42, 74, 0.16), 0 6px 16px rgba(44, 42, 74, 0.10);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -42,6 +44,8 @@
     --pink: #F08CB4;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 24px rgba(0, 0, 0, 0.3);
     --pill-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.4);
+    --shot-ring: rgba(236, 235, 244, 0.16);
+    --shot-shadow: 0 20px 44px rgba(0, 0, 0, 0.55), 0 6px 16px rgba(0, 0, 0, 0.35);
   }
 }
 
@@ -237,7 +241,7 @@ section { padding: 44px 0 10px; }
 .frow.reverse { flex-direction: row-reverse; }
 .frow-shot { flex: 0 0 280px; display: flex; justify-content: center; }
 .frow-shot img,
-.frow-shot .shot-ph { width: 280px; border-radius: 34px; box-shadow: var(--shadow); display: block; }
+.frow-shot .shot-ph { width: 280px; border-radius: 34px; box-shadow: 0 0 0 1px var(--shot-ring), var(--shot-shadow); display: block; }
 .shot-ph {
   aspect-ratio: 1170 / 2532;
   background: var(--card);
@@ -252,10 +256,6 @@ section { padding: 44px 0 10px; }
 .frow-copy .eyebrow { font-size: 12.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
 .frow-copy h3 { font-size: 24px; margin-bottom: 8px; }
 .frow-copy p { color: var(--ink-2); font-size: 16px; }
-/* A light/dark pair (two phones side by side) for the dashboard row. */
-.frow-shot.pair { flex: 0 0 300px; }
-.shot-pair { display: flex; gap: 12px; justify-content: center; }
-.shot-pair img { width: 132px; border-radius: 22px; box-shadow: var(--shadow); display: block; }
 @media (max-width: 700px) {
   .frow, .frow.reverse { flex-direction: column; gap: 22px; text-align: center; }
   .frow-shot { flex: 0 0 auto; }

@@ -163,7 +163,7 @@
 <section id="closer">
   <div class="wrap">
     <h2>What it does</h2>
-    <p class="lede">Four screens do most of the work. Here's each one, and what it's for.</p>
+    <p class="lede">Five screens do most of the work. Here's each one, and what it's for.</p>
     <div class="frows">
 
       <div class="frow">
@@ -197,6 +197,24 @@
           <h3>How it went, in two taps</h3>
           <p>Did it happen, and how do you feel? One tap for each. The moods are faces with names, from Rough to Great, so there's no score to optimize. It takes about five seconds, then you're back to your day.</p>
           <p>One more small question comes along too, a different one each day. Loud or quiet day? Where was your energy? One tap, always skippable, and after a few weeks the answers give the patterns something new to look at.</p>
+        </div>
+      </div>
+
+      <div class="frow reverse">
+        <div class="frow-shot">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/feature-journal-dark.webp" type="image/webp">
+            <source media="(prefers-color-scheme: dark)" srcset="assets/feature-journal-dark.png">
+            <source srcset="assets/feature-journal.webp" type="image/webp">
+            <img src="assets/feature-journal.png" width="280" alt="AideyHD's Talk it through screen: a spoken reflection saved to the brain dump, then four suggested entries — oatmeal, coffee, a run, and a mood — each quoting the phrase it came from, with a Log button and a dismiss on each row." loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="frow-copy">
+          <div class="eyebrow" style="color:var(--pink)">Talk it through</div>
+          <h3>Getting it out of your head is the point</h3>
+          <p>Some days you don't want a form. Tap the mic and say what happened, for as long as you want, and it goes in your brain dump.</p>
+          <p>Then it reads back what it heard and offers it as things you might log. The oatmeal, the run, the mood you mentioned in passing. Tap the ones that are right, wave off the rest, or close the screen and keep the words on their own.</p>
+          <p>The reading happens on the phone itself, which is why it's free like the rest of the app and why nothing gets sent anywhere. It doesn't answer back. It's a place to put things down, not someone to talk to.</p>
         </div>
       </div>
 
@@ -238,11 +256,39 @@
   </div>
 </section>
 
+<!-- ================= PATTERNS (insights rigor, out of the tracker grid) ================= -->
+<section id="patterns">
+  <div class="wrap">
+    <h2>Why some days work</h2>
+    <p class="lede">Log for a few weeks, and the app starts telling you what lines up with what.</p>
+    <div class="frows">
+      <div class="frow">
+        <div class="frow-shot">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/feature-insights-dark.webp" type="image/webp">
+            <source media="(prefers-color-scheme: dark)" srcset="assets/feature-insights-dark.png">
+            <source srcset="assets/feature-insights.webp" type="image/webp">
+            <img src="assets/feature-insights.png" width="280" alt="AideyHD's Insights screen: one finding card reading &quot;Better mood on quiet days&quot;, with the group averages, the number of days behind it, a &quot;Strong signal&quot; label, and a line saying a same-day link doesn't say which comes first." loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="frow-copy">
+          <div class="eyebrow" style="color:var(--ink-2)">Patterns</div>
+          <h3>It waits until the numbers hold up</h3>
+          <p>Better moods on the days you moved. A worse finish rate after a short night. Quiet days that turn out to suit you. Things that are true of you and would take a spreadsheet to find.</p>
+          <p>Nothing surfaces until you've logged 21 days. Every comparison it runs gets corrected against all the others, so a coincidence can't come back looking like a pattern. Each finding shows the days behind it, how strong the signal is, and whether the timing lets it say which came first.</p>
+          <p>Before that, it says what it's waiting for. Nine more days with energy logged, say, before it can look at how your energy lines up with getting things done.</p>
+          <p class="small muted">Patterns are leads, not verdicts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= FEATURE TOUR ================= -->
 <section id="features">
   <div class="wrap">
     <h2>What else you can track</h2>
-    <p class="lede">Schedule and check-ins are the core, and they're always on. Everything below is optional and starts switched off, so your first day isn't a setup screen.</p>
+    <p class="lede">Schedule and check-ins are the core, and they're always on. Everything below is optional and starts switched off, so your first day isn't a setup screen. Each one you turn on is one more thing the patterns can look at.</p>
     <div class="grid grid-3">
       <div class="card feature">
         <div class="glyph t-amber" aria-hidden="true">
@@ -277,7 +323,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 11h16M4 16h9"/><path d="M14.5 17.5l2.5 2.5 4-5"/></svg>
         </div>
         <h3>Brain dump</h3>
-        <p>A blank page for whatever's loud in your head. Or say your day out loud, and it offers to log what it heard, like the lunch and the walk, for you to keep or skip. All of it stays on your phone. No subscription, nothing sent anywhere.</p>
+        <p>A blank page for whatever's loud in your head. Type it out, or talk it through.</p>
       </div>
       <div class="card feature">
         <div class="glyph t-ink" aria-hidden="true">
@@ -285,13 +331,6 @@
         </div>
         <h3>History</h3>
         <p>Everything you've logged, grouped by day. Filter to one tracker, or tap an entry to edit it.</p>
-      </div>
-      <div class="card feature">
-        <div class="glyph t-ink" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 5-7"/></svg>
-        </div>
-        <h3>Patterns</h3>
-        <p>After a few weeks of logging, gentle patterns start to surface, like steadier moods on the days you moved, or after a longer night. It waits for 21 days of real data, checks each finding against everything else it's watching so a coincidence can't pass as a pattern, and says how sure it is and, when the timing allows, which came first. While it's still gathering, it says what it's waiting for and how many more days it needs.</p>
       </div>
     </div>
   </div>

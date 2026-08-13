@@ -35,7 +35,23 @@ Decode it before shipping. A QR nobody checked is a silent dead end.
 
 ## Founder slots
 
-`index.html`'s `#founder` section has two commented placeholders: the avatar (`assets/founder.png`) and the personal-site link. Both are one-line uncomments. Keep the avatar local — a third-party avatar host would leak visitor IPs on a page whose pitch is that nothing leaves your device.
+The avatar slot is filled: `assets/founder.png` (216px square, 3× the 72px it renders at) with a WebP alongside it. It's served locally on purpose — a third-party avatar host would leak visitor IPs on a page whose pitch is that nothing leaves your device. Its `alt` is empty by design, because "Hi, I'm Edwin" sits right next to it and a described portrait would make a screen reader say the name twice.
+
+One placeholder is still open: the personal-site link in `.founder-links`, a one-line uncomment once that site exists.
+
+Re-cropping the portrait from a phone photo (note the `exif_transpose` — iPhone stills carry an orientation tag, and cropping before applying it yields a sideways face):
+
+```sh
+python3 -c "
+from PIL import Image, ImageOps
+im = ImageOps.exif_transpose(Image.open('<source>.JPG')).convert('RGB')
+sq = ImageOps.fit(im, (216, 216), method=Image.LANCZOS, centering=(0.5, 0.5))
+clean = Image.new('RGB', sq.size); clean.putdata(list(sq.getdata()))
+clean.save('assets/founder.png', 'PNG', optimize=True)"
+cwebp -q 82 assets/founder.png -o assets/founder.webp
+```
+
+Rebuilding from raw pixels is what strips the EXIF. Confirm nothing survived: the PNG should contain only `IHDR`/`IDAT`/`IEND` chunks, and neither file should contain the strings `Apple`, `iPhone`, or `GPS`.
 
 ## DNS (one-time, at the domain registrar)
 

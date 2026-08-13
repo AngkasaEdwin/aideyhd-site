@@ -473,11 +473,16 @@
 <section id="founder">
   <div class="wrap">
     <div class="card founder-card">
-      <!-- AVATAR SLOT: drop the file in as assets/founder.png (square, ~160px),
-           then uncomment. Keep it local — no third-party avatar host, or the
-           privacy story starts leaking visitor IPs on the front page.
-      <img class="founder-face" src="assets/founder.png" width="72" height="72" alt="Edwin">
-      -->
+      <!-- Kept local — no third-party avatar host, or the privacy story starts
+           leaking visitor IPs on the front page.
+           alt="" is deliberate: "Hi, I'm Edwin" sits right beside it, so a
+           described portrait makes a screen reader say the name twice. -->
+      <!-- .founder-face sits on both: the picture is the flex child now, so it
+           needs the flex:none, and the img needs the border-radius. -->
+      <picture class="founder-face">
+        <source srcset="assets/founder.webp" type="image/webp">
+        <img class="founder-face" src="assets/founder.png" width="72" height="72" alt="">
+      </picture>
       <div class="founder-body">
         <p class="founder-hi">Hi, I'm Edwin.</p>
         <p>I have ADHD. I built AideyHD for myself first, after years of apps that started as a good idea and ended as one more thing making me feel behind. The streaks, the red badges, the five taps to log one thing. I stopped opening all of them.</p>
